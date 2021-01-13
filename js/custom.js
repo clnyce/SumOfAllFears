@@ -19,23 +19,32 @@ document.getElementById("sumBtn").addEventListener('click', function () {
     }
 
     // Run numbers through array to add them to each other
+    let array = [];
     for (let i = 0; i < sumArray.length; i++) {
         for (let s = i + 1; s < sumArray.length; s++) {
             if (sumArray[i] + sumArray[s] == kValue) {
                 result = `${sumArray[i]} + ${sumArray[s]} = ${kValue}`;
-                break;
+                array.push(result);
             }
         }
     }
-
-    if (result != "") {
+    if(array.length > 0){
         document.getElementById("output").innerHTML = "Success!";
-        document.getElementById("numSum").innerHTML = result;
+        document.getElementById("numSum").innerHTML = array;
     }
-    else {
+    else{
         document.getElementById("output").innerHTML = `No combinations of the numbers you entered add up to <b>${kValue}</b>!`;
         document.getElementById("numSum").innerHTML = "";
     }
+
+    // if (result != "") {
+    //     document.getElementById("output").innerHTML = "Success!";
+    //     document.getElementById("numSum").innerHTML = result;
+    // }
+    // else {
+    //     document.getElementById("output").innerHTML = `No combinations of the numbers you entered add up to <b>${kValue}</b>!`;
+    //     document.getElementById("numSum").innerHTML = "";
+    // }
     clearText()
 })
 
