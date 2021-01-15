@@ -18,7 +18,8 @@ document.getElementById("sumBtn").addEventListener('click', function () {
         return;
     }
 
-    // Run numbers through array to add them to each other
+    // Run numbers through loop to add them to each other and check if they equal K
+    // Then add them to array for output collection
     let array = [];
     for (let i = 0; i < sumArray.length; i++) {
         for (let s = i + 1; s < sumArray.length; s++) {
@@ -29,6 +30,7 @@ document.getElementById("sumBtn").addEventListener('click', function () {
         }
     }
     
+    // Output Results
     if(array.length > 0){
         document.getElementById("output").innerHTML = `The following combinations of the numbers you entered add up to "<b>${kValue}</b>":`;
         document.getElementById("numSum").innerHTML = array.join("");
